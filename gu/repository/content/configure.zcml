@@ -10,13 +10,16 @@
     i18n_domain="gu.repository.content"
 >
 
-    <!-- 
-        Defines permissions from the .zcml rather than requiring them to be used first
-        This _shouldn't_ be necessary in this version of Plone, but it still seems to be
-    -->
-    <include package="collective.autopermission" />
     <include file="permissions.zcml" />
-    
+   
+    <includeDependencies package="." />
+    <grok:grok package="." />
+   
+    <browser:resourceDirectory
+        name="gu.repository.content"
+        directory="static"
+    />
+
     <genericsetup:registerProfile
         name="default"
         title="RDSS Research Data Types"
@@ -24,16 +27,5 @@
         description="Content types and handling for research data."
         provides="Products.GenericSetup.interfaces.EXTENSION"
     />
-
-    <includeDependencies package="." />
-    <grok:grok package="." />
-   
-    <!--
-        Supposedly grok'ing the packages above should do this, but it doesn't
-    -->
-<browser:resourceDirectory
-    name="gu.repository.content"
-    directory="static"
-/>
-    <!--<plone:static directory="static" type="resource" />-->
+    
 </configure>

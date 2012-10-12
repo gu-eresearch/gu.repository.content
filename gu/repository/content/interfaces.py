@@ -1,12 +1,12 @@
-from plone.directives import form
+from zope.interface import Interface
 
 #
 
-class IRepositoryContainer(form.Schema):
+class IRepositoryContainer(Interface):
     pass
 
 #
 
-class IRepositoryItem(form.Schema):
+class IRepositoryItem(Interface):
     pass
 

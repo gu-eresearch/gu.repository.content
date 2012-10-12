@@ -27,7 +27,6 @@ setup(
         'Plone',
         'plone.app.dexterity [grok]',
         'plone.app.theming',
-        'collective.autopermission',
 #        'plone.app.intid',
 #        'plone.app.referenceablebehavior',
 #        'plone.app.relationfield',
