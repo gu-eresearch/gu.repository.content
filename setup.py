@@ -31,6 +31,7 @@ setup(
 #        'plone.app.referenceablebehavior',
 #        'plone.app.relationfield',
 #        'Products.PloneFormGen',
+        'collective.quickupload',
     ],
     extras_require={
         'test': ['plone.app.testing',]

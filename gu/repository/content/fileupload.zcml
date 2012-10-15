@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="gu.repository.content"
+    zcml:condition="installed plone.app.dexterity"
+>
+    <exclude package="collective.quickupload" file="configure.zcml" />
+    <include package="collective.quickupload" file="minimal.zcml" />
+    
+    <class class="gu.repository.content.repositoryitem.RepositoryItem">
+        <implements interface="collective.quickupload.interfaces.IQuickUploadCapable" />
+    </class>
+    
+    <class class="gu.repository.content.repositorycontainer.RepositoryContainer">
+        <implements interface="collective.quickupload.interfaces.IQuickUploadCapable" />
+    </class>        
+
+</configure>
