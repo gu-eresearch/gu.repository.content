@@ -15,8 +15,6 @@
     <includeDependencies package="." />
     <grok:grok package="." />
    
-    <include file="fileupload.zcml" />
-
     <browser:resourceDirectory
         name="gu.repository.content"
         directory="static"
