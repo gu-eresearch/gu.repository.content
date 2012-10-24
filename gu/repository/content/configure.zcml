@@ -12,6 +12,30 @@
 
     <include file="permissions.zcml" />
    
+    <five:implements
+        zcml:condition="installed zope.annotation"
+        class="gu.repository.content.interfaces.IRepositoryContainer"
+        interface="zope.annotation.interfaces.IAttributeAnnotatable"
+    />
+
+    <five:implements
+        zcml:condition="installed zope.annotation"
+        class="gu.repository.content.interfaces.IRepositoryItem"
+        interface="zope.annotation.interfaces.IAttributeAnnotatable"
+    />
+    
+    <adapter
+        factory="gu.repository.content.repositorymetadata.RepositoryMetadataAdapter"
+        provides="gu.repository.content.repositorymetadata.IRepositoryMetadata"
+        for="gu.repository.content.interfaces.IRepositoryContainer"
+    />
+
+    <adapter
+        factory="gu.repository.content.repositorymetadata.RepositoryMetadataAdapter"
+        provides="gu.repository.content.repositorymetadata.IRepositoryMetadata"
+        for="gu.repository.content.interfaces.IRepositoryItem"
+    />
+
     <includeDependencies package="." />
     <grok:grok package="." />
    
@@ -19,7 +43,7 @@
         name="gu.repository.content"
         directory="static"
     />
-
+    
     <genericsetup:registerProfile
         name="default"
         title="RDSS Research Data Types"

@@ -1,12 +1,11 @@
-from zope.interface import Interface
+from zope import interface
 
 #
 
-class IRepositoryContainer(Interface):
+class IRepositoryContainer(interface.Interface):
     pass
-
 #
 
-class IRepositoryItem(Interface):
+class IRepositoryItem(interface.Interface):
     pass
 
