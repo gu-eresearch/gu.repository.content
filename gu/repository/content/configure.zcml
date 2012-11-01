@@ -6,44 +6,32 @@
     xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"   
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="gu.repository.content"
->
+    >
 
     <include file="permissions.zcml" />
-   
-    <five:implements
-        zcml:condition="installed zope.annotation"
-        class="gu.repository.content.interfaces.IRepositoryContainer"
-        interface="zope.annotation.interfaces.IAttributeAnnotatable"
-    />
-
-    <five:implements
-        zcml:condition="installed zope.annotation"
-        class="gu.repository.content.interfaces.IRepositoryItem"
-        interface="zope.annotation.interfaces.IAttributeAnnotatable"
-    />
-    
-    <adapter
-        factory="gu.repository.content.repositorymetadata.RepositoryMetadataAdapter"
-        provides="gu.repository.content.repositorymetadata.IRepositoryMetadata"
-        for="gu.repository.content.interfaces.IRepositoryContainer"
-    />
-
-    <adapter
-        factory="gu.repository.content.repositorymetadata.RepositoryMetadataAdapter"
-        provides="gu.repository.content.repositorymetadata.IRepositoryMetadata"
-        for="gu.repository.content.interfaces.IRepositoryItem"
-    />
 
     <includeDependencies package="." />
     <grok:grok package="." />
-   
+
+    <include package=".browser"/>
+
+    <adapter
+        factory="gu.repository.content.repositorymetadata.RepositoryMetadataAdapter"
+    />
+
+    <adapter
+        factory="z3c.form.datamanager.DictionaryField"
+        for=".interfaces.IRepositoryMetadata
+             zope.schema.interfaces.IField"
+    />
+
     <browser:resourceDirectory
         name="gu.repository.content"
         directory="static"
     />
-    
+
     <genericsetup:registerProfile
         name="default"
         title="RDSS Research Data Types"
@@ -51,5 +39,5 @@
         description="Content types and handling for research data."
         provides="Products.GenericSetup.interfaces.EXTENSION"
     />
-    
+
 </configure>
