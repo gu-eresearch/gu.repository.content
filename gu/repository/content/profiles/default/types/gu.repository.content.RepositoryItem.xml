@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <object
-    name="ctcc.model.trial" meta_type="Dexterity FTI"
+    name="gu.repository.content.RepositoryItem" meta_type="Dexterity FTI"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="gu.repository.content"
 >
@@ -8,17 +8,23 @@
     <property name="title" i18n:translate="">Repository Item</property>
     <property name="description" i18n:translate="">Repository Item</property>
     <property name="content_icon">++resource++gu.repository.content/image/silk/plugin.png</property>
-    
+
     <property name="schema">gu.repository.content.interfaces.IRepositoryItem</property>
     <property name="klass">gu.repository.content.RepositoryItem</property>
     <property name="add_permission">gu.repository.content.AddRepositoryItem</property>
-    
+
     <property name="allow_discussion">False</property>
 
     <property name="behaviors">
-        <element value="plone.app.dexterity.behaviors.metadata.IBasic" />
-        <!--<element value="plone.app.dexterity.behaviors.metadata.IOwnership" />-->
-        <!--<element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />-->
+        <!-- usual Plone internal dublin core metadata -->
+        <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
+        <!-- make this content ATReferencale -->
+        <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
+        <!-- allow z3c.relations to be used with this type of content
+             TODO: check whether this is necesesry for custom fields
+             only or whether this provides actually some additional
+             functionality out of the box -->
+        <element value="plone.app.relationfield.behavior.IRelatedItems"/>
     </property>
 
     <property name="global_allow">True</property>
@@ -39,7 +45,7 @@
         url_expr="string:${folder_url}/" visible="True">
         <permission value="View"/>
     </action>
-    
+
     <action title="Edit" action_id="edit" category="object" condition_expr=""
         url_expr="string:${object_url}/edit" visible="True">
         <!--<permission value="Modify portal content"/>-->
