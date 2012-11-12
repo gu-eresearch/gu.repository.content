@@ -21,8 +21,6 @@ class RepositoryContentFixture(PloneSandboxLayer):
         """ do special site setup here"""
         applyProfile(portal, 'gu.repository.content:default')
 
-    def tearDownZope(self, app):
-        z2.uninstallProduct(app, 'gu.repository.content')
 
 REPOSITORYCONTENT_FIXTURE = RepositoryContentFixture()
 
