@@ -26,5 +26,12 @@
         permission="cmf.ModifyPortalContent"
     />
 
+    <browser:view
+        name="edit_schema"
+        class=".schema.SchemaEditForm"
+        for="gu.repository.content.interfaces.IRepositoryContainer"
+        permission="gu.repository.content.ManageRepositoryContainer"
+    />
+
 
 </configure>

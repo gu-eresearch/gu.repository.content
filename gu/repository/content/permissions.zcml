@@ -14,4 +14,10 @@
         title="gu.repository.content: Add Repository Item"
     />
 
+    <permission
+        id="gu.repository.content.ManageRepositoryContainer"
+        title="gu.repository.content: Manage Repository Container"
+    />
+
+
 </configure>

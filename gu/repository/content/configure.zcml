@@ -10,15 +10,26 @@
     i18n_domain="gu.repository.content"
     >
 
+    <includeDependencies package="." />
+
     <include file="permissions.zcml" />
 
-    <includeDependencies package="." />
-    <grok:grok package="." />
+    <!-- <grok:grok package="." /> -->
 
     <include package=".browser"/>
 
     <adapter
         factory="gu.repository.content.repositorymetadata.RepositoryMetadataAdapter"
+    />
+
+    <adapter
+        for="gu.repository.content.interfaces.IRepositoryItem"
+        factory=".adapters.RepositoryMetadataSchemaAdapter"
+    />
+
+    <adapter
+        for="gu.repository.content.interfaces.IRepositoryContainer"
+        factory=".adapters.RepositoryMetadataSchemaAdapter"
     />
 
     <adapter

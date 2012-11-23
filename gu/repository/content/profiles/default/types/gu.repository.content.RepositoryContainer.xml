@@ -34,6 +34,7 @@
     <property name="default_view_fallback">False</property>
     <property name="view_methods">
         <element value="view"/>
+        <element value="view_metadata"/>
     </property>
 
     <alias from="(Default)" to="(selected layout)"/>
@@ -49,6 +50,16 @@
     <action title="Edit" action_id="edit" category="object" condition_expr=""
         url_expr="string:${object_url}/edit" visible="True">
         <permission value="Modify portal content"/>
+    </action>
+
+    <action title="Metadata" action_id="edit_metadata" category="object" condition_expr=""
+        url_expr="string:${object_url}/edit_metadata" visible="True">
+        <permission value="Modify portal content"/>
+    </action>
+
+    <action title="Schema" action_id="edit_schema" category="object" condition_expr=""
+        url_expr="string:${object_url}/edit_schema" visible="True">
+        <permission value="gu.repository.content: Manage Repository Container" />
     </action>
 
 </object>
