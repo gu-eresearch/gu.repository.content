@@ -27,6 +27,7 @@ from gu.repository.content.interfaces import IRepositoryContainer, IRepositoryIt
 # </model>
 
 
+#FIXME: the whole thing fails miserably if the schema fields are empty
 class ModelMixin(object):
 
     _model = None

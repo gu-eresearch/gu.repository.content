@@ -18,9 +18,9 @@
 
     <include package=".browser"/>
 
-    <adapter
-        factory="gu.repository.content.repositorymetadata.RepositoryMetadataAdapter"
-    />
+    <!-- <adapter -->
+    <!--     factory="gu.repository.content.repositorymetadata.RepositoryMetadataAdapter" -->
+    <!-- /> -->
 
     <adapter
         for="gu.repository.content.interfaces.IRepositoryItem"
