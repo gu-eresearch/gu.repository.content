@@ -1,14 +1,30 @@
 from zope import interface
 from zope import schema
+from plone.app.textfield import RichText
 
 #
 
 class IRepositoryContainer(interface.Interface):
 
-    pass
+    body = RichText(
+        title=u"Body text",
+    #default_mime_type='text/x-rst',
+    #output_mime_type='text/x-html',
+    #allowed_mime_types=('text/x-rst', 'text/structured',),
+    #    default=defaultBody,
+    )
+
 
 class IRepositoryItem(interface.Interface):
-    pass
+
+    body = RichText(
+        title=u"Body text",
+    #default_mime_type='text/x-rst',
+    #output_mime_type='text/x-html',
+    #allowed_mime_types=('text/x-rst', 'text/structured',),
+    #    default=defaultBody,
+    )
+
 
 
 class IRepositoryMetadata(interface.Interface):

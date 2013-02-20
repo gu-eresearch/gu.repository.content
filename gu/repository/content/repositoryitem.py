@@ -6,3 +6,5 @@ from gu.repository.content.interfaces import IRepositoryItem
 class RepositoryItem(Container):
 
     implements(IRepositoryItem)
+
+    body = None
