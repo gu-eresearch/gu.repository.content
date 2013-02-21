@@ -8,6 +8,7 @@ class IRepositoryContainer(interface.Interface):
 
     body = RichText(
         title=u"Body text",
+        required=False,
     #default_mime_type='text/x-rst',
     #output_mime_type='text/x-html',
     #allowed_mime_types=('text/x-rst', 'text/structured',),
@@ -19,6 +20,7 @@ class IRepositoryItem(interface.Interface):
 
     body = RichText(
         title=u"Body text",
+        required=False,
     #default_mime_type='text/x-rst',
     #output_mime_type='text/x-html',
     #allowed_mime_types=('text/x-rst', 'text/structured',),
