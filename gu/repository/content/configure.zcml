@@ -38,6 +38,16 @@
              zope.schema.interfaces.IField"
     />
 
+    <adapter
+        factory=".repositorycontainer.repositoryContainer_SearchableText"
+        name="SearchableText"
+        />
+
+    <adapter
+        factory=".repositoryitem.repositoryItem_SearchableText"
+        name="SearchableText"
+        />
+
     <browser:resourceDirectory
         name="gu.repository.content"
         directory="static"
