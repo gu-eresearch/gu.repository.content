@@ -1,6 +1,7 @@
 from zope import interface
 from zope import schema
 from plone.app.textfield import RichText
+from plone.namedfile import field
 
 #
 
@@ -15,6 +16,12 @@ class IRepositoryContainer(interface.Interface):
     #    default=defaultBody,
     )
 
+    logo = field.NamedBlobImage(
+        title=u"Logo",
+        required=False,
+        )
+
+
 
 class IRepositoryItem(interface.Interface):
 
@@ -26,6 +33,11 @@ class IRepositoryItem(interface.Interface):
     #allowed_mime_types=('text/x-rst', 'text/structured',),
     #    default=defaultBody,
     )
+
+    logo = field.NamedBlobImage(
+        title=u"Logo",
+        required=False,
+        )
 
 
 
