@@ -16,6 +16,8 @@
     <property name="allow_discussion">False</property>
 
     <property name="behaviors">
+        <!-- readable IDs for pretty URLS -->
+        <element value="plone.app.content.interfaces.INameFromTitle" />
         <!-- usual Plone internal dublin core metadata -->
         <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
         <!-- make this content ATReferencale -->
