@@ -2,8 +2,9 @@
 
     <roles>
         <role name="Repository Administrator" />
+        <role name="Repository Contributor" />
     </roles>
-    
+
     <permissions>
         <permission name="gu.repository.content: Add Repository Container" acquire="False">
             <role name="Repository Administrator" />
@@ -12,6 +13,7 @@
 
         <permission name="gu.repository.content: Add Repository Item" acquire="False">
             <role name="Repository Administrator" />
+            <role name="Repository Contributor" />
             <role name="Manager" />
         </permission>
 
