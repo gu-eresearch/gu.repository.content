@@ -40,12 +40,12 @@ class IRepositoryItem(interface.Interface):
         )
 
 
-deprecated('IRepositoryMetadata', 'Interface will go away')
-class IRepositoryMetadata(interface.Interface):
-    pass
+deprecated('IRepositoryMetadata', 'Replaced by gu.z3cform.rdf.interfaces.IGraph')
+from gu.z3cform.rdf.interfaces import IGraph
+IRepositoryMetadata = IGraph
 
 
-deprecated('IRepositoryMetadata', 'Interface will go away')
+deprecated('IRepositoryMetadataSchema', 'Interface will go away')
 class IRepositoryMetadataSchema(interface.Interface):
 
     container_schema = interface.Attribute("""raw schema representation for the container""")
