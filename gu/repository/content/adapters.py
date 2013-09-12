@@ -14,7 +14,6 @@ class RepositoryMetadataSchemaAdapter(object):
     """
     This adapter looks for schema definitions attached to the repository
     container as annotations.
-    
     """
 
     interface.implements(IRepositoryMetadataSchema)
@@ -50,7 +49,7 @@ class RepositoryMetadataSchemaAdapter(object):
                 and result.__name__ == ANNO_KEY):
             result = location.location.LocationProxy(result, self.container, ANNO_KEY)
         return result
-            
+
     def get_container_schema(self):
         anno = self._annotations()
         if anno is not None:
@@ -78,4 +77,3 @@ class RepositoryMetadataSchemaAdapter(object):
         # TODO: fail silent or noisy?
 
     item_schema = property(get_item_schema, set_item_schema)
-
