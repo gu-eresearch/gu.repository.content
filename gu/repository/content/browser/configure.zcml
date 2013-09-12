@@ -10,28 +10,8 @@
     i18n_domain="gu.repository.content"
     >
 
-    <!-- permissions: zope2.View, zope.Public, cmf.ModifyPortalContent
-    -->
-    <browser:view
-        name="view_metadata"
-        class=".metadata.MetadataView"
-        for="zope.annotation.interfaces.IAttributeAnnotatable"
-        permission="zope.Public"
     />
 
-    <browser:view
-        name="edit_metadata"
-        class=".metadata.MetadataEdit"
-        for="zope.annotation.interfaces.IAttributeAnnotatable"
-        permission="cmf.ModifyPortalContent"
     />
-
-    <browser:view
-        name="edit_schema"
-        class=".schema.SchemaEditForm"
-        for="gu.repository.content.interfaces.IRepositoryContainer"
-        permission="gu.repository.content.ManageRepositoryContainer"
-    />
-
 
 </configure>
