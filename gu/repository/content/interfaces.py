@@ -2,7 +2,7 @@ from zope import interface
 from zope import schema
 from plone.app.textfield import RichText
 from plone.namedfile import field
-
+from zope.deprecation import deprecated
 #
 
 class IRepositoryContainer(interface.Interface):
@@ -40,14 +40,14 @@ class IRepositoryItem(interface.Interface):
         )
 
 
-
+deprecated('IRepositoryMetadata', 'Interface will go away')
 class IRepositoryMetadata(interface.Interface):
     pass
 
 
+deprecated('IRepositoryMetadata', 'Interface will go away')
 class IRepositoryMetadataSchema(interface.Interface):
 
     container_schema = interface.Attribute("""raw schema representation for the container""")
 
     item_schema = interface.Attribute("""raw schema representation for items""")
-

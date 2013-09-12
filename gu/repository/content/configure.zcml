@@ -18,26 +18,6 @@
 
     <include package=".browser"/>
 
-    <!-- <adapter -->
-    <!--     factory="gu.repository.content.repositorymetadata.RepositoryMetadataAdapter" -->
-    <!-- /> -->
-
-    <adapter
-        for="gu.repository.content.interfaces.IRepositoryItem"
-        factory=".adapters.RepositoryMetadataSchemaAdapter"
-    />
-
-    <adapter
-        for="gu.repository.content.interfaces.IRepositoryContainer"
-        factory=".adapters.RepositoryMetadataSchemaAdapter"
-    />
-
-    <adapter
-        factory="z3c.form.datamanager.DictionaryField"
-        for=".interfaces.IRepositoryMetadata
-             zope.schema.interfaces.IField"
-    />
-
     <adapter
         factory=".repositorycontainer.repositoryContainer_SearchableText"
         name="SearchableText"
@@ -48,6 +28,8 @@
         name="SearchableText"
         />
 
+    <!-- FIXME get rid of resources Directory and register icons as
+    browser resources -->
     <browser:resourceDirectory
         name="gu.repository.content"
         directory="static"

@@ -3,12 +3,15 @@ from zope import component
 from zope import annotation
 from zope import location
 from zope import proxy
+from zope.deprecation import deprecated
 from persistent.dict import PersistentDict
 from gu.repository.content.interfaces import IRepositoryMetadataSchema
 from gu.repository.content.interfaces import IRepositoryContainer
 
 ANNO_KEY = 'gu.repository.schema'
 
+# BBB
+deprecated('RepositoryMetadataSchemaAdapter', 'Will go away soon')
 
 class RepositoryMetadataSchemaAdapter(object):
     """
