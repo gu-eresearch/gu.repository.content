@@ -10,8 +10,14 @@
     i18n_domain="gu.repository.content"
     >
 
+  <browser:resource
+    name="repositoryitem.png"
+    file="repositoryitem.png"
     />
 
+  <browser:resource
+    name="repositorycontainer.png"
+    file="repositorycontainer.png"
     />
 
 </configure>

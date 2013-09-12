@@ -7,7 +7,7 @@
 
     <property name="title" i18n:translate="">Repository Item</property>
     <property name="description" i18n:translate="">Repository Item</property>
-    <property name="content_icon">++resource++gu.repository.content/image/silk/plugin.png</property>
+    <property name="content_icon">++resource++repositoryitem.png</property>
 
     <property name="schema">gu.repository.content.interfaces.IRepositoryItem</property>
     <property name="klass">gu.repository.content.RepositoryItem</property>

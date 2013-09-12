@@ -7,7 +7,7 @@
 
     <property name="title" i18n:translate="">Repository Container</property>
     <property name="description" i18n:translate="">Repository Container</property>
-    <property name="content_icon">++resource++gu.repository.content/image/silk/box.png</property>
+    <property name="content_icon">++resource++repositorycontainer.png</property>
 
     <property name="schema">gu.repository.content.interfaces.IRepositoryContainer</property>
     <property name="klass">gu.repository.content.RepositoryContainer</property>

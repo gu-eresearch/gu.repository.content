@@ -28,13 +28,6 @@
         name="SearchableText"
         />
 
-    <!-- FIXME get rid of resources Directory and register icons as
-    browser resources -->
-    <browser:resourceDirectory
-        name="gu.repository.content"
-        directory="static"
-    />
-
     <genericsetup:registerProfile
         name="default"
         title="RDSS Research Data Types"
