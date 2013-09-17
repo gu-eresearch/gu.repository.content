@@ -41,7 +41,7 @@ class SetupTest(unittest.TestCase):
         roles = [r['name'] for r in portal.rolesOfPermission('gu.repository.content: Add Repository Container') if r['selected']]
         self.assertEqual(roles, ['Manager', 'Repository Administrator'])
         roles = [r['name'] for r in portal.rolesOfPermission('gu.repository.content: Add Repository Item') if r['selected']]
-        self.assertEqual(roles, ['Manager', 'Repository Administrator'])
+        self.assertEqual(roles, ['Manager', 'Repository Administrator', 'Repository Contributor'])
 
     # def test_registry(self):
     #     portal = self.layer['portal']
