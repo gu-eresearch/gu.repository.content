@@ -31,6 +31,7 @@ class SetupTest(unittest.TestCase):
         login(portal, TEST_USER_NAME)
         setRoles(portal, TEST_USER_ID, ['Manager'])
         self.assertTrue('gu.repository.content.RepositoryContainer' in portal.portal_types)
+        setRoles(portal, TEST_USER_ID, ['Member'])
 
     def test_roles(self):
         portal = self.layer['portal']
